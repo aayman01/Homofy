@@ -1,15 +1,30 @@
 import { NavLink } from "react-router-dom";
+import logo from "../../assets/logo.png";
+import { useState } from "react";
+import './Navbar.css';
 
 
 const Navbar = () => {
+  const [fix, setFix] = useState(false);
+
+  const onScrollChange = () => {
+    if(window.scrollY >= 200){
+      setFix(true)
+    }else{
+      setFix(false)
+    }
+  }
+
+  window.addEventListener('scroll',onScrollChange)
+
   const navLinks = (
     <>
       <li>
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "text-lg font-medium border-2 hover:bg-[#00C194] text-[#00C194] hover:text-white border-[#00C194]"
-              : "text-black md:text-white hover:underline decoration-[#00C194]"
+              ? " font-medium border-2 hover:bg-[#00C194] text-[#00C194] hover:text-white border-[#00C194]"
+              : "text-black md:text-[#00C194] text-base"
           }
           to="/"
         >
@@ -21,7 +36,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive
               ? "text-lg font-medium border-2 hover:bg-[#00C194] text-[#00C194] hover:text-white border-[#00C194]"
-              : "text-black md:text-white hover:underline decoration-[#00C194]"
+              : "text-black md:text-[#00C194] text-base"
           }
           to="/updateprofile"
         >
@@ -33,7 +48,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive
               ? "text-lg font-medium border-2 hover:bg-[#00C194] text-[#00C194] hover:text-white border-[#00C194]"
-              : "text-black md:text-white hover:underline decoration-[#00C194]"
+              : "text-black md:text-[#00C194] text-base"
           }
           to="/about"
         >
@@ -45,7 +60,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive
               ? "text-lg font-medium border-2 hover:bg-[#00C194] text-[#00C194] hover:text-white border-[#00C194]"
-              : "text-black md:text-white hover:underline decoration-[#00C194]"
+              : "text-black md:text-[#00C194] text-base"
           }
           to="/login"
         >
@@ -54,9 +69,15 @@ const Navbar = () => {
       </li>
     </>
   );
-
+// navbar bg-base-100 px-4 shadow-lg fixed z-10
   return (
-    <div className="navbar mt-3 absolute z-10 max-w-6xl mx-auto lg:right-10">
+    <div
+      className={
+        fix
+          ? "newFixed navbar fixed z-10 px-4"
+          : "navbar mt-3 fixed z-10 px-4"
+      }
+    >
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -82,7 +103,16 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <a className="btn btn-ghost text-3xl font-semibold text-[#00C194]">Homofy</a>
+        <div className="flex items-center justify-center">
+          <img
+            className="w-12 h-12 rounded-full hidden md:block"
+            src={logo}
+            alt=""
+          />
+          <a className="btn btn-ghost text-3xl font-semibold text-[#00C194]">
+            Homofy
+          </a>
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
