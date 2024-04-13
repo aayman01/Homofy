@@ -8,7 +8,8 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 
 const Login = () => {
-  const {signInUser} = useContext(AuthContext);
+
+  const { signInUser, googleLogIn, githubLogin  } = useContext(AuthContext);
 
   const {
     register,
@@ -83,26 +84,26 @@ const Login = () => {
               Login
             </button>
           </div>
-          <p className="text-center text-gray-500 mt-3 mb-4">-Or login with-</p>
-          <div className="flex text-2xl items-center gap-3 justify-center">
-            <Link>
-              <FcGoogle />
-            </Link>
-            <Link>
-              <FaGithub />
-            </Link>
-            <Link className="text-blue-600">
-              <FaFacebook />
-            </Link>
-          </div>
-          <p className="text-center mt-4">
-            Do not have an account?
-            <Link className="text-[#11828d] font-semibold" to="/register">
-              {" "}
-              Register
-            </Link>{" "}
-          </p>
         </form>
+        <p className="text-center text-gray-500 mb-4">-Or login with-</p>
+        <div className="flex text-2xl items-center gap-3 justify-center">
+          <button onClick={() => googleLogIn()}>
+            <FcGoogle />
+          </button>
+          <button onClick={() => githubLogin()}>
+            <FaGithub />
+          </button>
+          <button className="text-blue-600">
+            <FaFacebook />
+          </button>
+        </div>
+        <p className="text-center mt-4 pb-10">
+          Do not have an account?
+          <Link className="text-[#11828d] font-semibold" to="/register">
+            {" "}
+            Register
+          </Link>{" "}
+        </p>
       </div>
     </div>
   );
