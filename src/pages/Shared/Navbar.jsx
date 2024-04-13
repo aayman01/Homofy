@@ -73,9 +73,7 @@ const Navbar = () => {
   return (
     <div
       className={
-        fix
-          ? "newFixed navbar fixed z-10 px-4"
-          : "navbar mt-3 fixed z-10 px-4"
+        fix ? "newFixed navbar fixed z-10 px-4" : "navbar mt-3 fixed z-10 px-4"
       }
     >
       <div className="navbar-start">
@@ -117,8 +115,8 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
-      <div className="navbar-end mr-9">
-        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+      <div className="navbar-end">
+        <label tabIndex={0} className="btn btn-ghost btn-circle avatar mr-3">
           <div className="w-10 rounded-full">
             <img src="" />
           </div>
