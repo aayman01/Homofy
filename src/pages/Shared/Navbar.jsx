@@ -1,10 +1,14 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import './Navbar.css';
+import { AuthContext } from "../Provider/AuthProvider";
 
 
 const Navbar = () => {
+
+  const {user, logOut} = useContext(AuthContext)
+  console.log(user)
   const [fix, setFix] = useState(false);
 
   const onScrollChange = () => {
@@ -69,7 +73,7 @@ const Navbar = () => {
       </li>
     </>
   );
-// navbar bg-base-100 px-4 shadow-lg fixed z-10
+
   return (
     <div
       className={
@@ -115,22 +119,32 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
+
       <div className="navbar-end">
-        <label tabIndex={0} className="btn btn-ghost btn-circle avatar mr-3">
-          <div className="w-10 rounded-full">
-            <img src="" />
-          </div>
-        </label>
-        {/* {user ? (
-              <button onClick={handleLogOut} className="btn">
-                Log out
+        {user ? (
+          <div className="flex flex-row gap-2 items-center">
+            <div tabIndex={0} className="avatar mr-3">
+              <button
+                className="w-10 rounded-full tooltip tooltip-bottom"
+                data-tip={user?.displayName}
+              >
+                <img className="rounded-full" src={user?.photoURL} />
               </button>
-            ) : (
-              <Link to="/login">
-                <button className="btn">Login</button>
-              </Link>
-            )} */}
-        <button className="btn">Login</button>
+            </div>
+            <button
+              onClick={logOut}
+              className="btn border-0 bg-[#00C194] text-white font-semibold"
+            >
+              Log out
+            </button>
+          </div>
+        ) : (
+          <Link to="/login">
+            <button className="btn border-0 bg-[#00C194] text-white font-semibold">
+              Login
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );

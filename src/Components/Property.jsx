@@ -56,7 +56,7 @@ const Property = ({ property }) => {
         </div>
         <div className="card-actions justify-end">
           <Link to={`/property/${id}`}>
-            <button className="btn bg-[#00C194] text-white font-semibold">
+            <button className="btn bg-[#00C194] text-white font-semibold mt-2">
               View Property
             </button>
           </Link>

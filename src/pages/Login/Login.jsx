@@ -1,16 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../Shared/Navbar";
 import { FcGoogle } from "react-icons/fc";
-import { FaFacebook, FaGithub } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-
+import { FaGithub } from "react-icons/fa6";
+import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
-
-  const { signInUser, googleLogIn, githubLogin  } = useContext(AuthContext);
-
+  const { signInUser, googleLogIn, githubLogin } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -18,15 +18,44 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    const {email, password} = data;
+    const { email, password } = data;
 
-    signInUser(email, password) 
-    .then(result => {
-      console.log(result.user)
-    })
-    .catch(error => {
-      console.log(error.message)
-    })
+    signInUser(email, password)
+      .then(() => {
+        toast.success("Successfully logged in!");
+        setTimeout(
+          () => navigate(location?.state ? location.state : "/"),
+          2000
+        );
+      })
+      .catch((error) => {
+        toast.error(error.code);
+      });
+  };
+
+  const handleGoogleLogin = () => {
+    googleLogIn()
+      .then(() => {
+        toast.success("Successfully logged in!");
+        setTimeout(() => navigate(location?.state ? location.state : "/"),2000);
+      })
+      .catch((error) => {
+        toast.error(error.code);
+        navigate(location?.state ? location.state : "/");
+      });
+  };
+  const handleGithubLogin = () => {
+    githubLogin()
+      .then(() => {
+        toast.success("Successfully logged in!");
+        setTimeout(
+          () => navigate(location?.state ? location.state : "/"),
+          2000
+        );
+      })
+      .catch((error) => {
+        toast.error(error.code);
+      });
   };
 
   return (
@@ -87,14 +116,11 @@ const Login = () => {
         </form>
         <p className="text-center text-gray-500 mb-4">-Or login with-</p>
         <div className="flex text-2xl items-center gap-3 justify-center">
-          <button onClick={() => googleLogIn()}>
+          <button onClick={handleGoogleLogin}>
             <FcGoogle />
           </button>
-          <button onClick={() => githubLogin()}>
+          <button onClick={handleGithubLogin}>
             <FaGithub />
-          </button>
-          <button className="text-blue-600">
-            <FaFacebook />
           </button>
         </div>
         <p className="text-center mt-4 pb-10">
@@ -104,6 +130,7 @@ const Login = () => {
             Register
           </Link>{" "}
         </p>
+        <Toaster position="top-right" reverseOrder={false} />
       </div>
     </div>
   );
