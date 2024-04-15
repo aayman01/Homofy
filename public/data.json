@@ -11,14 +11,15 @@
     "bathrooms": 3,
     "location": "Los Angeles, CA",
     "facilities": ["living room", "swimming pool", "gourmet kitchen", "backyard"],
-    "image": "luxury_home_image.jpg",
-    "View_Property": "https://i.ibb.co/Zd0PGf3/singledeatil.jpg"
+    "year_built": 2015,
+    "View_Property": "https://i.ibb.co/Zd0PGf3/singledeatil.jpg",
+    "coordinates": [34.0259, -118.7798]
   },
   {
     "id": 2,
     "estate_title": "Townhouse Retreat",
     "segment_name": "Townhouses",
-    "description": "Discover the charm of urban living in this stylish townhouse. With contemporary finishes, spacious rooms, and proximity to amenities, this residence offers the perfect blend of comfort and convenience.",
+    "description": "Discover the charm of urban living in this stylish townhouse. With contemporary finishes, spacious rooms, and proximity to amenities, this residence offers the perfect blend of comfort and convenience.Welcome to your new home! This stunning modern townhouse offers a perfect blend of style, convenience, and comfort. Nestled in the heart of a vibrant neighborhood, this property is ideal for those seeking urban living with a touch of tranquility.",
     "price": "$800,000",
     "status": "sale",
     "area": "2000 sq ft",
@@ -26,8 +27,9 @@
     "bathrooms": 2,
     "location": "New York, NY",
     "facilities": ["living room", "gourmet kitchen", "rooftop terrace"],
-    "image": "townhouse_image.jpg",
-    "View_Property": "https://i.ibb.co/WvFR8fm/townhousejpg.jpg"
+    "year_built": 2010, 
+    "View_Property": "https://i.ibb.co/WvFR8fm/townhousejpg.jpg",
+    "coordinates": [40.7128, -74.0060]
   },
   {
     "id": 3,
@@ -41,8 +43,9 @@
     "area": "1200 sq ft",
     "location": "Chicago, IL",
     "facilities": ["living room", "fitness center", "rooftop lounge"],
-    "image": "apartment_image.jpg",
-    "View_Property": "https://i.ibb.co/Z857c5S/modern-apartment.jpg"
+    "year_built": 2005,
+    "View_Property": "https://i.ibb.co/Z857c5S/modern-apartment.jpg",
+    "coordinates": [30.2672, -97.7431]
   },
   {
     "id": 4,
@@ -56,8 +59,9 @@
     "area": "600 sq ft",
     "location": "Austin, TX",
     "facilities": ["bedroom", "study lounge", "community events"],
-    "image": "student_housing_image.jpg",
-    "View_Property": "https://i.ibb.co/ByTn9K6/Student-Housing.jpg"
+    "year_built": 2018,
+    "View_Property": "https://i.ibb.co/ByTn9K6/Student-Housing.jpg",
+    "coordinates": [34.0522, -118.2437]
   },
   {
     "id": 5,
@@ -71,8 +75,9 @@
     "area": "1500 sq ft",
     "location": "Miami, FL",
     "facilities": ["wellness programs", "social activities", "landscaped grounds"],
-    "image": "senior_living_image.jpg",
-    "View_Property": "https://i.ibb.co/31jzwJX/Community-Senior-Housing.jpg"
+    "year_built": 1990,
+    "View_Property": "https://i.ibb.co/31jzwJX/Community-Senior-Housing.jpg",
+    "coordinates": [47.6062, -122.3321]
   },
   {
     "id": 6,
@@ -86,8 +91,9 @@
     "area": "2000 sq ft",
     "location": "Maui, HI",
     "facilities": ["beach access", "ocean views", "private patio"],
-    "image": "vacation_rental_image.jpg",
-    "View_Property": "https://i.ibb.co/Gd1LtT0/seaview.jpg"
+    "year_built": 2017,
+    "View_Property": "https://i.ibb.co/Gd1LtT0/seaview.jpg",
+    "coordinates": [37.7749, -122.4194]
   },
   {
     "id": 7,
@@ -101,8 +107,9 @@
     "area": "1000 sq ft",
     "location": "Aspen, CO",
     "facilities": ["hiking trails", "fireplace", "mountain views"],
-    "image": "cabin_rental_image.jpg",
-    "View_Property": "https://i.ibb.co/WvFR8fm/townhousejpg.jpg"
+    "year_built": 1985,
+    "View_Property": "https://i.ibb.co/WvFR8fm/townhousejpg.jpg",
+    "coordinates": [35.5951, -82.5515]
   },
   {
     "id": 8,
@@ -116,7 +123,8 @@
     "area": "1800 sq ft",
     "location": "Lake Tahoe, CA",
     "facilities": ["lakefront access", "fire pit", "kayaking"],
-    "image": "lakefront_rental_image.jpg",
-    "View_Property": "https://i.ibb.co/HT13GYj/lakeview.jpg"
+    "year_built": 2008,
+    "View_Property": "https://i.ibb.co/HT13GYj/lakeview.jpg",
+    "coordinates": [41.8781, -87.6298]
   }
 ]

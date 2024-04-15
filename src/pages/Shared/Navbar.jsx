@@ -9,7 +9,6 @@ import { CgProfile } from "react-icons/cg";
 const Navbar = () => {
 
   const {user, logOut} = useContext(AuthContext)
-  console.log(user)
   const [fix, setFix] = useState(false);
 
   const onScrollChange = () => {
