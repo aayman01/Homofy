@@ -2,13 +2,14 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../Shared/Navbar";
 import { FcGoogle } from "react-icons/fc";
 import { useForm } from "react-hook-form";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { FaGithub } from "react-icons/fa6";
+import { FaEye, FaEyeSlash, FaGithub } from "react-icons/fa6";
 import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
   const { signInUser, googleLogIn, githubLogin } = useContext(AuthContext);
+  const [showPassword, setShowPassword] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const {
@@ -41,7 +42,6 @@ const Login = () => {
       })
       .catch((error) => {
         toast.error(error.code);
-        navigate(location?.state ? location.state : "/");
       });
   };
   const handleGithubLogin = () => {
@@ -86,19 +86,25 @@ const Login = () => {
               <span className="text-red-500 mt-2">This field is required</span>
             )}
           </div>
-          <div className="form-control">
+          <div className="form-control relative">
             <label className="label">
               <p className="label-text text-lg">
                 Password <span className="text-red-600">*</span>{" "}
               </p>
             </label>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               name="password"
               placeholder="password"
               className="input input-bordered"
               {...register("password", { required: true })}
             />
+            <span
+              className="absolute bottom-4 right-3"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye />}
+            </span>
             {errors.password && (
               <span className="text-red-500 mt-2">This field is required</span>
             )}

@@ -11,7 +11,9 @@ const PropertyDeatils = () => {
         <div className="h-20">
           <Navbar />
         </div>
-        <p> property no: {property.id}</p>
+        <div>
+          
+        </div>
       </div>
     );
 };

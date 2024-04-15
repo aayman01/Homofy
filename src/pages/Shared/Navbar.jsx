@@ -3,6 +3,7 @@ import logo from "../../assets/logo.png";
 import { useContext, useState } from "react";
 import './Navbar.css';
 import { AuthContext } from "../Provider/AuthProvider";
+import { CgProfile } from "react-icons/cg";
 
 
 const Navbar = () => {
@@ -128,7 +129,10 @@ const Navbar = () => {
                 className="w-10 rounded-full tooltip tooltip-bottom"
                 data-tip={user?.displayName}
               >
-                <img className="rounded-full" src={user?.photoURL} />
+                <img
+                  className="rounded-full"
+                  src={user?.photoURL || <CgProfile />}
+                />
               </button>
             </div>
             <button

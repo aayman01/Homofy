@@ -1,15 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../Shared/Navbar";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
-
+  const navigate = useNavigate();
   const {createUser} = useContext(AuthContext)
+  const [error, setError] = useState('')
 
   const {
     register,
@@ -18,17 +20,42 @@ const Register = () => {
   } = useForm();
 
   const onSubmit = (data, e) => {
-    const { password, email} = data;
+    const { password, email, yourName, photoUrl } = data;
 
-    console.log(data)
-    createUser(email, password)
-    .then(result => {
-      console.log(result.user)
-      toast.success("Successfully registered!");
-    })
-    .catch(error => {
-      console.log(error.message)
-    })
+    setError("");
+    
+    // password validation
+
+    if(password.length < 6){
+      setError("Password should be atlest 6 characters or longer")
+      return;
+    }
+    else if (!/[A-Z]/.test(password)){
+      setError("Your password should contain atleast one capital letter");
+      return;
+    }
+    else if (!/^(?=.*[a-z]).+$/.test(password)){
+      setError('Your password should contain atleast one small letter');
+      return;
+    }
+
+
+    // create user with email and password
+
+      createUser(email, password)
+        .then((result) => {
+          updateProfile(result.user, {
+            displayName: yourName,
+            photoURL: photoUrl,
+          })
+            .then()
+            .catch();
+          toast.success("Successfully registered!");
+          navigate("/");
+        })
+        .catch((error) => {
+          toast.error(error.message);
+        });
     e.target.reset();
   };
     return (
@@ -110,7 +137,7 @@ const Register = () => {
                   type={showPassword ? "text" : "password"}
                   name="password"
                   placeholder="password"
-                  className="input input-bordered relative"
+                  className="input input-bordered"
                   {...register("password", { required: true })}
                 />
                 <span
@@ -124,6 +151,7 @@ const Register = () => {
                     This field is required
                   </span>
                 )}
+                {error && <p className="text-red-700 text-sm">{error}</p>}
                 {/* <label className="label">
               <a href="#" className="label-text-alt link link-hover">
                 Forgot password?
