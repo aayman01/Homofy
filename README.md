@@ -9,7 +9,7 @@ This real estate website provides users with a platform to explore, buy, sell, a
 
 - Property Listings: Browse through a wide range of residential properties including houses, apartments, villas, condos, and more.
 
-- Advanced Search: Use filters such as location, price range, property type, size, and amenities to narrow down search results and find properties that match specific criteria.
+- Firebase: Used Firebase for authentication of the user
 
 - Detailed Property Pages: Each property listing includes comprehensive details such as description, price, area, location map, facilities, interior photos, year built, and coordinates.
 
