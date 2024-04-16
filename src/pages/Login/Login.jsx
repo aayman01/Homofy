@@ -27,7 +27,7 @@ const Login = () => {
         toast.success("Successfully logged in!");
         setTimeout(
           () => navigate(location?.state ? location.state : "/"),
-          2000
+          1500
         );
       })
       .catch((error) => {
@@ -39,7 +39,7 @@ const Login = () => {
     googleLogIn()
       .then(() => {
         toast.success("Successfully logged in!");
-        setTimeout(() => navigate(location?.state ? location.state : "/"),1700);
+        setTimeout(() => navigate(location?.state ? location.state : "/"),1500);
       })
       .catch((error) => {
         toast.error(error.code);
@@ -51,7 +51,7 @@ const Login = () => {
         toast.success("Successfully logged in!");
         setTimeout(
           () => navigate(location?.state ? location.state : "/"),
-          1700
+          1500
         );
       })
       .catch((error) => {

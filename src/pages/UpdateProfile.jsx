@@ -14,7 +14,6 @@ const UpdateProfile = () => {
   const { register, handleSubmit } = useForm({
     defaultValues: {
       userName: user.displayName,
-      email: user.email,
       photoUrl: user.photoURL,
     },
   });
@@ -46,9 +45,9 @@ const UpdateProfile = () => {
               alt=""
             />
             <div className="font-bold text-start border p-6 rounded-lg  bg-[#00C194] text-white">
-              <p className="">Username: {user.displayName}</p>
-              <p className="">Email: {user.email}</p>
-              <p className="">photoURL: {user.photoURL}</p>
+              <p className="">Username: {user?.displayName}</p>
+              <p className="">Email: {user?.email}</p>
+              <p className="">photoURL: {user?.photoURL}</p>
             </div>
           </div>
           <div className="mb-20">
