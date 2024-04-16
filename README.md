@@ -22,6 +22,9 @@ This real estate website provides users with a platform to explore, buy, sell, a
 - swiper slider
 - react-hook-from
 - react-leaflet
+- react-router
+- react-helmet-async
+- react-icons
 
 
 
