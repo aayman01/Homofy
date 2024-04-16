@@ -43,18 +43,6 @@ const Navbar = () => {
               ? "text-lg font-medium border-2 hover:bg-[#00C194] text-[#00C194] hover:text-white border-[#00C194]"
               : "text-black md:text-[#00C194] text-base font-medium"
           }
-          to="/about"
-        >
-          About
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "text-lg font-medium border-2 hover:bg-[#00C194] text-[#00C194] hover:text-white border-[#00C194]"
-              : "text-black md:text-[#00C194] text-base font-medium"
-          }
           to="/updateprofile"
         >
           Update Profile
@@ -67,9 +55,9 @@ const Navbar = () => {
               ? "text-lg font-medium border-2 hover:bg-[#00C194] text-[#00C194] hover:text-white border-[#00C194]"
               : "text-black md:text-[#00C194] text-base"
           }
-          to="/login"
+          to="/addproperty"
         >
-          Log in
+          Add Property
         </NavLink>
       </li>
     </>
@@ -86,7 +74,7 @@ const Navbar = () => {
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 text-white"
+              className="h-5 w-5 text-black"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"

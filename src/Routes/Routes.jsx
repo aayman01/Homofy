@@ -7,6 +7,7 @@ import Register from "../pages/Register/Register";
 import PropertyDeatils from "../pages/PropertyDeatils/PropertyDeatils";
 import PrivateRoutes from "./PrivateRoutes";
 import UpdateProfile from "../pages/UpdateProfile";
+import AddProperty from "../pages/AddProperty";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoutes>
             <UpdateProfile />
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/addproperty",
+        element: (
+          <PrivateRoutes>
+            <AddProperty />
           </PrivateRoutes>
         ),
       },
