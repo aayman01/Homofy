@@ -28,7 +28,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive
               ? " font-medium border-2 hover:bg-[#00C194] text-[#00C194] hover:text-white border-[#00C194]"
-              : "text-black md:text-[#00C194] text-base"
+              : "text-black md:text-[#00C194] text-base font-medium"
           }
           to="/"
         >
@@ -41,7 +41,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive
               ? "text-lg font-medium border-2 hover:bg-[#00C194] text-[#00C194] hover:text-white border-[#00C194]"
-              : "text-black md:text-[#00C194] text-base"
+              : "text-black md:text-[#00C194] text-base font-medium"
           }
           to="/about"
         >
@@ -53,7 +53,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive
               ? "text-lg font-medium border-2 hover:bg-[#00C194] text-[#00C194] hover:text-white border-[#00C194]"
-              : "text-black md:text-[#00C194] text-base"
+              : "text-black md:text-[#00C194] text-base font-medium"
           }
           to="/updateprofile"
         >
