@@ -6,6 +6,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { FaEye, FaEyeSlash, FaGithub } from "react-icons/fa6";
 import toast, { Toaster } from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { signInUser, googleLogIn, githubLogin } = useContext(AuthContext);
@@ -38,7 +39,7 @@ const Login = () => {
     googleLogIn()
       .then(() => {
         toast.success("Successfully logged in!");
-        setTimeout(() => navigate(location?.state ? location.state : "/"),2000);
+        setTimeout(() => navigate(location?.state ? location.state : "/"),1700);
       })
       .catch((error) => {
         toast.error(error.code);
@@ -50,7 +51,7 @@ const Login = () => {
         toast.success("Successfully logged in!");
         setTimeout(
           () => navigate(location?.state ? location.state : "/"),
-          2000
+          1700
         );
       })
       .catch((error) => {
@@ -60,6 +61,11 @@ const Login = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>
+          Homofy | Login
+        </title>
+      </Helmet>
       <div className="h-20">
         <Navbar />
       </div>

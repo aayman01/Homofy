@@ -35,18 +35,7 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "text-lg font-medium border-2 hover:bg-[#00C194] text-[#00C194] hover:text-white border-[#00C194]"
-              : "text-black md:text-[#00C194] text-base"
-          }
-          to="/updateprofile"
-        >
-          Update Profile
-        </NavLink>
-      </li>
+
       <li>
         <NavLink
           className={({ isActive }) =>
@@ -57,6 +46,18 @@ const Navbar = () => {
           to="/about"
         >
           About
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "text-lg font-medium border-2 hover:bg-[#00C194] text-[#00C194] hover:text-white border-[#00C194]"
+              : "text-black md:text-[#00C194] text-base"
+          }
+          to="/updateprofile"
+        >
+          Update Profile
         </NavLink>
       </li>
       <li>
@@ -111,9 +112,9 @@ const Navbar = () => {
             src={logo}
             alt=""
           />
-          <a className="btn btn-ghost text-3xl font-semibold text-[#00C194]">
+          <Link to='/' className="btn btn-ghost text-3xl font-semibold text-[#00C194]">
             Homofy
-          </a>
+          </Link>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">

@@ -4,13 +4,14 @@ import { FaCube } from "react-icons/fa6";
 import { IoMdCheckmarkCircle } from "react-icons/io";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import { Helmet } from "react-helmet-async";
 
 
 const PropertyDeatils = () => {
     const properties = useLoaderData();
     const {id} = useParams();
     const property = properties.find(property => property.id == id);
-    const position = [40.737876, -74.008985];
+    // const position = [40.737876, -74.008985];
     const {
       estate_title,
       segment_name,
@@ -24,11 +25,15 @@ const PropertyDeatils = () => {
       facilities,
       View_Property,
       year_built,
+      coordinates
     } = property;
     
 
     return (
       <div>
+        <Helmet>
+          <title>Homofy | Property Deatils</title>
+        </Helmet>
         <div className="h-20">
           <Navbar />
         </div>
@@ -122,7 +127,7 @@ const PropertyDeatils = () => {
             </h2>
             <MapContainer
               className="h-[400px] z-20"
-              center={[40.72553, -74.037522]}
+              center={coordinates}
               zoom={13}
               scrollWheelZoom={false}
             >
@@ -130,7 +135,7 @@ const PropertyDeatils = () => {
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-              <Marker position={position}>
+              <Marker position={coordinates}>
                 <Popup>{location}</Popup>
               </Marker>
             </MapContainer>

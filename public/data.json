@@ -94,37 +94,6 @@
     "year_built": 2017,
     "View_Property": "https://i.ibb.co/Gd1LtT0/seaview.jpg",
     "coordinates": [37.7749, -122.4194]
-  },
-  {
-    "id": 7,
-    "estate_title": "Cozy Mountain Cabin",
-    "segment_name": "Vacation rentals",
-    "description": "Embrace the tranquility of nature in this cozy mountain cabin. Nestled among the trees, this retreat offers a peaceful escape with hiking trails, a fireplace, and stunning mountain views.",
-    "price": "$300/night",
-    "status": "rent",
-    "bedrooms": 2,
-    "bathrooms": 1,
-    "area": "1000 sq ft",
-    "location": "Aspen, CO",
-    "facilities": ["hiking trails", "fireplace", "mountain views"],
-    "year_built": 1985,
-    "View_Property": "https://i.ibb.co/WvFR8fm/townhousejpg.jpg",
-    "coordinates": [35.5951, -82.5515]
-  },
-  {
-    "id": 8,
-    "estate_title": "Lakefront Retreat",
-    "segment_name": "Vacation rentals",
-    "description": "Experience serenity by the lake in this charming vacation rental. Enjoy fishing, kayaking, and evenings by the fire pit, creating memories to last a lifetime.",
-    "price": "$400/night",
-    "status": "rent",
-    "bedrooms": 3,
-    "bathrooms": 2,
-    "area": "1800 sq ft",
-    "location": "Lake Tahoe, CA",
-    "facilities": ["lakefront access", "fire pit", "kayaking"],
-    "year_built": 2008,
-    "View_Property": "https://i.ibb.co/HT13GYj/lakeview.jpg",
-    "coordinates": [41.8781, -87.6298]
   }
+  
 ]

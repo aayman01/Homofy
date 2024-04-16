@@ -6,6 +6,7 @@ import ErrorPage from "../pages/ErrorPage";
 import Register from "../pages/Register/Register";
 import PropertyDeatils from "../pages/PropertyDeatils/PropertyDeatils";
 import PrivateRoutes from "./PrivateRoutes";
+import UpdateProfile from "../pages/UpdateProfile";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,14 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/updateprofile",
+        element: (
+          <PrivateRoutes>
+            <UpdateProfile />
+          </PrivateRoutes>
+        ),
       },
     ],
   },
