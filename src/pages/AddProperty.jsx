@@ -43,7 +43,7 @@ const AddProperty = () => {
                 rows={5}
               ></textarea>
             </div>
-            
+
             <div className=" flex justify-between gap-3 mt-3">
               <div className="form-control w-1/2">
                 <label className="label">
@@ -153,13 +153,14 @@ const AddProperty = () => {
                 <input
                   type="text"
                   name="name"
-                  placeholder="Sqft"
-                  className="Google Maps Longitude"
+                  placeholder="Google Maps Longitude"
+                  className="input input-bordered"
                   required
                 />
               </div>
             </div>
           </div>
+          {/* 3rd part */}
           <div className="bg-slate-100 p-4 rounded-lg mb-4 mt-5">
             <h2 className="text-xl font-bold text-[#00C194] mb-4">
               Contact Information

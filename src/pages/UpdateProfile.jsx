@@ -9,6 +9,7 @@ import { Helmet } from "react-helmet-async";
 const UpdateProfile = () => {
   const { user } = useContext(AuthContext);
   console.log(user);
+  const { photoURL, displayName } = user;
 
 
   const { register, handleSubmit } = useForm({
@@ -30,24 +31,32 @@ const UpdateProfile = () => {
   };
   return (
     <div>
-        <Helmet>
-            <title>Homofy | Update profile</title>
-        </Helmet>
+      <Helmet>
+        <title>Homofy | Update profile</title>
+      </Helmet>
       <div className="h-20">
         <Navbar />
       </div>
       <div className="max-w-6xl mx-auto px-8">
         <div className="mt-14 ">
-          <div className=" flex gap-7 items-center mb-10">
+          <div className=" flex flex-col md:flex-row gap-7 items-center mb-10">
             <img
-              className="w-[200px] h-[200px] rounded-full border-2 p-1 border-[#00C194]"
+              className="md:w-[200px] md:h-[200px] rounded-full border-2 p-1 border-[#00C194]"
               src={user.photoURL}
               alt=""
             />
-            <div className="font-bold text-start border p-6 rounded-lg  bg-[#00C194] text-white">
-              <p className="">Username: {user?.displayName}</p>
+            <div className="font-bold border p-4 rounded-lg  bg-[#00C194] text-white">
+              <p className="">Username: {displayName}</p>
               <p className="">Email: {user?.email}</p>
-              <p className="">photoURL: {user?.photoURL}</p>
+              {/* <p className="">photoURL: {user?.photoURL}</p> */}
+              {photoURL.length > 50 ? (
+                <p>
+                  PhotoURL:
+                  {photoURL.slice(0, 35)}...
+                </p>
+              ) : (
+                <p>PhotoURL: {photoURL}</p>
+              )}
             </div>
           </div>
           <div className="mb-20">

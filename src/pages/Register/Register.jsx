@@ -52,7 +52,7 @@ const Register = () => {
             .then()
             .catch();
           toast.success("Successfully registered!");
-          navigate("/");
+          setTimeout(()=>navigate("/login"),1500);
         })
         .catch((error) => {
           toast.error(error.message);
