@@ -150,18 +150,19 @@ const Register = () => {
                 >
                   {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye />}
                 </span>
-                {errors.password && (
-                  <span className="text-red-500 mt-2">
-                    This field is required
-                  </span>
-                )}
-                {error && <p className="text-red-700 text-sm">{error}</p>}
+
                 {/* <label className="label">
               <a href="#" className="label-text-alt link link-hover">
                 Forgot password?
               </a>
             </label> */}
               </div>
+              {error && <p className="text-red-700 text-sm">{error}</p>}
+              {errors.password && (
+                <span className="text-red-500 mt-2">
+                  This field is required
+                </span>
+              )}
               <div className="form-control mt-6">
                 <button className="btn bg-[#00C194] text-lg text-white">
                   Register
