@@ -3,7 +3,7 @@
 
 This real estate website provides users with a platform to explore, buy, sell, and rent residential properties. The website offers a user-friendly interface with advanced search capabilities, property listings, and detailed information about each property.
 
-# Live link: 
+# Live link: https://assignment-09-7fdca.web.app/
 
 ## Features
 
@@ -22,6 +22,9 @@ This real estate website provides users with a platform to explore, buy, sell, a
 - swiper slider
 - react-hook-from
 - react-leaflet
+- react-router
+- react-helmet-async
+- react-icons
 
 
 
