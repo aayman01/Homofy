@@ -5,13 +5,14 @@ import { IoMdCheckmarkCircle } from "react-icons/io";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { Helmet } from "react-helmet-async";
-
+import { Icon } from "leaflet";
+import marker from "../../assets/marker-icon.png"
 
 const PropertyDeatils = () => {
     const properties = useLoaderData();
     const {id} = useParams();
     const property = properties.find(property => property.id == id);
-    // const position = [40.737876, -74.008985];
+
     const {
       estate_title,
       segment_name,
@@ -28,6 +29,11 @@ const PropertyDeatils = () => {
       coordinates
     } = property;
     
+
+    const customIcon = new Icon({
+      iconUrl: marker,
+      iconSize: [38, 38],
+    });
 
     return (
       <div>
@@ -135,7 +141,7 @@ const PropertyDeatils = () => {
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-              <Marker position={coordinates}>
+              <Marker position={coordinates} icon={customIcon}>
                 <Popup>{location}</Popup>
               </Marker>
             </MapContainer>
